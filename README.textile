@@ -1,9 +1,9 @@
-.h1 Introduction
+h1. Introduction
 
 An Erector based collection of resource-oriented widgets
 
 
-.h1 Examples
+h1. Examples
 
 Let's say you have a model called Document and you supply a +document.shat+
 file like the following:
@@ -20,7 +20,7 @@ file like the following:
    end
 
 
-.h1 Features
+h1. Features
 
 Shatner will provide you with:
 * forms to create and update any document
