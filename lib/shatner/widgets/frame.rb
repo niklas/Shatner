@@ -1,5 +1,6 @@
 class Shatner::Frame < Erector::RailsWidget
   include Shatner::Helpers::I18n
+  include Shatner::Helpers::Group
 
   def content
     div :class => %w(frame) do

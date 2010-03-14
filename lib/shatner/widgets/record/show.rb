@@ -1,12 +1,11 @@
 module Shatner
   module Record
-    class Show < Frame
-      needs :record
-      attr_reader :record
-
+    class Show < Base
+      include Shatner::Helpers::Attributes
       def content
         super do
           actions
+          render_record_template
         end
       end
 
@@ -18,10 +17,6 @@ module Shatner
         ul :class => 'actions' do
           li { edit_link }
         end
-      end
-
-      def record_dom_class
-        record.class.name.underscore
       end
 
       def edit_link
