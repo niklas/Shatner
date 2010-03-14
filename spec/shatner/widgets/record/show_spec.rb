@@ -9,15 +9,25 @@ module Shatner::Record
       # FIXME why must this be plural??
       @widget.stub!(:edit_documents_path).and_return('/documents/1/edit')
       @widget.stub!(:documents_path).and_return('/documents/1')
+
+      @actionview = mock(:'ActionView::Base')
+      @widget.stub!(:parent).and_return(@actionview)
+
+      @actionview.stub!(:link_to).and_return('some_link')
     end
 
     it "should render a frame with title and actions" do
+      @actionview.should_receive(:link_to).
+        with(/edit/, kind_of(Hash)).and_return('edit_link')
+      @actionview.should_receive(:link_to).
+        with(/destroy/, kind_of(Hash)).and_return('destroy_link')
+
       @widget.to_s.should be_html_with do
         div :class => 'frame' do
           h3 "A Document", :class => 'title'
           ul :class => 'actions' do
-            li { a 'edit "A Document"', :class => 'edit document', :title => 'edit "A Document"', :href => '/documents/1/edit' }
-            li { a 'destroy "A Document"', :class => 'destroy document', :title => 'destroy "A Document"', :href => '/documents/1' }
+            li 'edit_link'
+            li 'destroy_link'
           end
         end
       end
