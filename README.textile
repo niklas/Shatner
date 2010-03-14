@@ -1,0 +1,32 @@
+.h1 Introduction
+
+An Erector based collection of resource-oriented widgets
+
+
+.h1 Examples
+
+Let's say you have a model called Document and you supply a +document.shat+
+file like the following:
+
+   group "General" do
+      string :title
+      belongs_to :owner, :readonly => true
+   end
+   group "Content" do
+      textile :body
+   end
+   group "Images" do
+      has_many :images
+   end
+
+
+.h1 Features
+
+Shatner will provide you with:
+* forms to create and update any document
+* views to show the document in the same way it was edited
+  (think of a Rails FormBuilder on steroids, coupled to a "ShowBuilder", 
+   both using the same template file)
+* the possibility of viewing/editing only one of the above groups to the user, 
+   be it as tabs, accordion or totally separate requests through urls like /documents/1/edit/images
+
