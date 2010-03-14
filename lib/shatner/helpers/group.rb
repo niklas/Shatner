@@ -17,6 +17,18 @@ module Shatner
         end
       end
 
+      # FIXME better do with inheritance?
+      def form_item(attribute_name)
+        di :class => attribute_name do
+          dt do
+            current_form.label attribute_name, human_attribute_name(attribute_name)
+          end
+          dd do
+            yield
+          end
+        end
+      end
+
       def di(*args)
         args.unshift 'di'
         element *args do
