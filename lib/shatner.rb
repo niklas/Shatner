@@ -6,3 +6,4 @@ module Shatner
 end
 
 require 'shatner/widgets/frame'
+require 'shatner/widgets/record/show'

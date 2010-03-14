@@ -3,6 +3,7 @@ class Shatner::Frame < Erector::RailsWidget
     div :class => %w(frame) do
       h3 title, :class => 'title'
       super
+      yield if block_given?
     end
   end
 
