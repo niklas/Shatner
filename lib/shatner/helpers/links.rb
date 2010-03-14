@@ -13,8 +13,9 @@ module Shatner
         link_to title, opts
       end
 
+      # @return Array of css classes
       def edit_link_css
-        ['edit', 'fn0rd', record_dom_class]
+        ['edit', record_dom_class]
       end
 
       def destroy_link(opts = {})
