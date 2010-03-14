@@ -8,6 +8,7 @@ h1. Examples
 Let's say you have a model called Document and you supply a +document.shat+
 file like the following:
 
+@code@
    group "General" do
       string :title
       belongs_to :owner, :readonly => true
