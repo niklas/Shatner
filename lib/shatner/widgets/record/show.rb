@@ -14,8 +14,12 @@ module Shatner
 
       def actions
         ul :class => 'actions' do
-          li { a 'edit', :class => %w'edit document'}
+          li { edit_link }
         end
+      end
+
+      def edit_link
+        a 'edit', :class => %w'edit document', :title => t('shared.edit_it', :title => title)
       end
 
     end

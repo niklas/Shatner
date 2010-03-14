@@ -18,6 +18,10 @@ module Shatner
         end
       end
     end
+
+    it "should have the en translation" do
+      ::I18n.available_locales.should include(:en)
+    end
   end
 
 end

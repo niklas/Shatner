@@ -15,7 +15,7 @@ module Shatner::Record
           h3 "A Document", :class => 'title'
           ul :class => 'actions' do
             li do
-              a :class => 'edit document'
+              a 'edit', :class => 'edit document', :title => 'edit "A Document"'
             end
           end
         end
