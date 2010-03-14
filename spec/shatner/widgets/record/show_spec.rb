@@ -18,9 +18,9 @@ module Shatner::Record
 
     it "should render a frame with title and actions" do
       @actionview.should_receive(:link_to).
-        with(/edit/, kind_of(Hash)).and_return('edit_link')
+        with(/edit/, '/documents/1/edit', kind_of(Hash) ).and_return('edit_link')
       @actionview.should_receive(:link_to).
-        with(/destroy/, kind_of(Hash)).and_return('destroy_link')
+        with(/destroy/, '/documents/1', kind_of(Hash)).and_return('destroy_link')
 
       @widget.to_s.should be_html_with do
         div :class => 'frame' do

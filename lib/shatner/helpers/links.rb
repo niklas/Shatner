@@ -7,10 +7,7 @@ module Shatner
           :title => title,
           :class => edit_link_css.join(' ')
         )
-        opts.merge!(
-          :href => polymorphic_path(record, :action => :edit)
-        )
-        link_to title, opts
+        link_to title, polymorphic_path(record, :action => :edit), opts
       end
 
       # @return Array of css classes
@@ -26,10 +23,9 @@ module Shatner
           :confirm => t('.confirm_destroy_it', :title => record_title)
         )
         opts.merge!(
-          :method => :delete,
-          :href => polymorphic_path(record)
+          :method => :delete
         )
-        link_to title, opts
+        link_to title, polymorphic_path(record), opts
       end
 
       # @return Array of css classes
