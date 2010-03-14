@@ -14,6 +14,14 @@ module Shatner
       def human_attribute_name(attribute_name)
         record.class.human_attribute_name(attribute_name)
       end
+
+      def record_title
+        record.title
+      end
+
+      def frame_title
+        record_title
+      end
     end
   end
 end

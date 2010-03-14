@@ -4,13 +4,13 @@ class Shatner::Frame < Erector::RailsWidget
 
   def content
     div :class => %w(frame) do
-      h3 title, :class => 'title'
+      h3 frame_title, :class => 'title'
       super
       yield if block_given?
     end
   end
 
-  def title
+  def frame_title
     "Frame"
   end
 end

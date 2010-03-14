@@ -6,6 +6,9 @@ module Shatner::Record
     before( :each ) do
       @document = Document.new :title => 'A Document'
       @widget = Show.new :record => @document
+      @widget.stub!(:edit_document_path)
+      # FIXME why must this be plural??
+      @widget.stub!(:edit_documents_path)
     end
 
     it "should render a frame with title and actions" do
@@ -14,7 +17,7 @@ module Shatner::Record
           h3 "A Document", :class => 'title'
           ul :class => 'actions' do
             li do
-              a 'edit', :class => 'edit document', :title => 'edit "A Document"'
+              a 'edit "A Document"', :class => 'edit document', :title => 'edit "A Document"'
             end
           end
         end

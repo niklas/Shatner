@@ -1,3 +1,4 @@
 en:
   shared:
+    edit: 'edit'
     edit_it: 'edit "{{title}}"'
