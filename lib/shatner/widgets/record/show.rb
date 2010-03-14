@@ -1,6 +1,7 @@
 module Shatner
   module Record
     class Show < Frame
+      needs :record
       attr_reader :record
 
       def content
