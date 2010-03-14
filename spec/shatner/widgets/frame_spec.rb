@@ -13,7 +13,9 @@ module Shatner
 
     it "should render a frame" do
       @html.should be_html_with do
-        div :class => 'frame'
+        div :class => 'frame' do
+          h3 "Frame", :class => 'title'
+        end
       end
     end
   end
