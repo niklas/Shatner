@@ -1,2 +1,4 @@
 * gemspec
   * depend on erector  
+
+  * test: assert2 nokogiri

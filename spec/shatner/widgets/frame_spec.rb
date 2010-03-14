@@ -6,14 +6,15 @@ module Shatner
     before( :each ) do
       @widget = Frame.new
       @html = @widget.to_s
-      @doc = Nokogiri::HTML(@html)
     end
     it "should be a RailsWidget" do
       @widget.should be_a(Erector::RailsWidget)
     end
 
-    it "should wrap its contents" do
-      @html.should include('frame')
+    it "should render a frame" do
+      @html.should be_html_with do
+        div :class => 'frame'
+      end
     end
   end
 
