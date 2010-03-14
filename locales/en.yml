@@ -2,3 +2,7 @@ en:
   shared:
     edit: 'edit'
     edit_it: 'edit "{{title}}"'
+    destroy: 'destroy'
+    destroy_it: 'destroy "{{title}}"'
+    confirm_destroy: 'really destroy'
+    confirm_destroy_it: 'really destroy "{{title}}"?'

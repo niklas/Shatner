@@ -12,6 +12,7 @@ module Shatner
       def actions
         ul :class => 'actions' do
           li { edit_link }
+          li { destroy_link }
         end
       end
 
