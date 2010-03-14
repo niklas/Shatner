@@ -4,7 +4,7 @@ module Shatner::Record
 
   describe Show do
     before( :each ) do
-      document = mock(:title => 'A Document', :to_param => 'a-document')
+      document = Document.new :title => 'A Document'
       @widget = Show.new :record => document
       @html = @widget.to_s
     end

@@ -1,6 +1,7 @@
 module Shatner
   module Record
     class Show < Frame
+      attr_reader :record
 
       def content
         super do
@@ -9,7 +10,7 @@ module Shatner
       end
 
       def title
-        @record.title
+        record.title
       end
 
       def actions
@@ -18,8 +19,12 @@ module Shatner
         end
       end
 
+      def record_dom_class
+        record.class.name.underscore
+      end
+
       def edit_link
-        a 'edit', :class => %w'edit document', :title => t('shared.edit_it', :title => title)
+        a 'edit', :class => ['edit', record_dom_class], :title => t('shared.edit_it', :title => title)
       end
 
     end
